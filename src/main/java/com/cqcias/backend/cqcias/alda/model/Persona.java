@@ -34,6 +34,11 @@ public class Persona {
     @Column(name = "fecha_upd")
     private ZonedDateTime fecha_upd;
 
+    @PreUpdate
+    private void preUpdate(){
+        fecha_upd = ZonedDateTime.now();
+    }
+
 
 
     public Persona(){
